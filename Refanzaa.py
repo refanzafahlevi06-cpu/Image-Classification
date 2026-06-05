@@ -30,9 +30,9 @@ if menu == "1. Batch Image Resizer":
     st.subheader("Pengaturan Ukuran Target (Pixels)")
     col_width, col_height = st.columns(2)
     with col_width:
-        width = st.slider("Lebar (Width):", min_value=100, max_value=200, value=300, step=10)
+        width = st.slider("Lebar (Width):", min_value=64, max_value=128, value=264, step=10)
     with col_height:
-        height = st.slider("Tinggi (Height):", min_value=100, max_value=200, value=300, step=10)
+        height = st.slider("Tinggi (Height):", min_value=64, max_value=128, value=264, step=10)
     
     target_size = (width, height)
 
