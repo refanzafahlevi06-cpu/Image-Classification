@@ -51,14 +51,15 @@ if menu == "1. Batch Image Resizer":
             try:
                 img = Image.open(uploaded_file)
                 old_size = img.size
-                img_resized = img.resize(target_size)
+                img_resized = img.resize((128, 128))
                 
                 with st.expander(f"📄 Berkas: {uploaded_file.name}"):
                     c1, c2 = st.columns(2)
                     with c1:
                         st.image(img, caption=f"Asli ({old_size[0]}x{old_size[1]})", use_container_width=True)
                     with c2:
-                        st.image(img_resized, caption=f"Hasil Resize ({target_size[0]}x{target_size[1]})", use_container_width=True)
+                        # Bagian caption langsung ditulis manual saja angkanya agar tidak error
+                        st.image(img_resized, caption="Hasil Resize (128x128)", use_container_width=True)
                     
                     buffer = io.BytesIO()
                     file_ext = os.path.splitext(uploaded_file.name)[1].lower()
