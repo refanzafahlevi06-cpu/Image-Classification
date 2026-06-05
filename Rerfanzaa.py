@@ -102,7 +102,7 @@ elif menu == "2. Struktur Model CNN":
         ])
         
         stream = io.StringIO()
-        model.summary(print_fn=lambda x: stream.write(x + ))
+        model.summary(print_fn=lambda x: stream.write(x + '\n'))
         summary_string = stream.getvalue()
         
         st.subheader("Detail Layer Model Keras:")
